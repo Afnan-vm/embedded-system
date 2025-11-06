@@ -19,18 +19,18 @@ return product;
 float divd(float a,float b)   //the function definition for division
 {
     float divi;
-
     if(b==0)
 {
     printf("\nerror");
    
 }
-
+else
+{
 
     divi=a/b;             //copy of num1 / copy of num2
 
 return divi;
-
+}
 }
 int main()
 {
@@ -44,34 +44,38 @@ printf("********************\n");
 printf("Enter the first number : \n");
 scanf("%f",&num1);
 
-printf("Enter the operator(+,-,*,/  \n");
+printf("Enter the operator +,-,*,/  \n");
 scanf(" %c", &op);
 
 printf("\nEnter the first number : ");
 scanf("%f", &num2);
 
-if(op=='+')                  //conditional statement
+switch(op)                    //switch operation
 {
-result = add(num1, num2);      //result = sum
-}
-else if(op=='-')
-{
-    result = sub(num1, num2);   //result = sub
-}
-else if(op=='*')
-{
-    result = mul(num1, num2);    //result = mul
-}
-else if(op=='/')
-{ 
-    result = divd(num1, num2);     //result = div
-   
-}
-else 
-{
+    case '+':
+    result = add(num1, num2);    //result = sum
+    break;
+
+    
+    case '-':
+    result = sub(num1, num2);     //result = sub
+    break;
+
+    
+    case '*':
+    result = mul(num1, num2);     //result = mul
+    break;
+
+    
+    case '/':
+    result = divd(num1, num2);    //result = div
+    break;
+    default:
     printf("invalid operator");
-    result=0;
+    break;
 }
+
+
 printf("\nResult is : %.2f", result);
 
 
