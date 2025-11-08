@@ -5,10 +5,11 @@ int b;
 float c;
 double d;
 
+#pragma pack(1)
 typedef struct 
 {
-    int rollno;
-    char name[60];
+    int rollno : 2;
+    char name[50];
     float marks;
 }person;
 int main()
